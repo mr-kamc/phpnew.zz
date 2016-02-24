@@ -18,12 +18,8 @@
     <![endif]-->
 </head>
 <body>
-<?php foreach($news as $article): ?>
-<a href = "/App/Controllers/article.php?id=<?php echo $article->id; ?>">
     <h1><?php echo $article->name; ?></h1>
-</a>
-<p><?php echo $article->text; ?></p>
-<?php endforeach; ?>
+    <p><?php echo $article->text; ?></p>
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
