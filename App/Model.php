@@ -7,7 +7,7 @@ abstract class Model {
 
     const TABLE = '';
 
-    public function findAll()
+    public static function findAll()
     {
         $db = new Db();
         return $db->query(
@@ -16,7 +16,7 @@ abstract class Model {
         );
 
     }
-    public function findById($id)
+    public static function findById($id)
     {
         $db = new Db();
         return $db->query(
@@ -25,7 +25,7 @@ abstract class Model {
         )[0] ?: false;
 
     }
-    public function findLastNews($num)
+    public static function findLastNews($num)
     {
         $db = new Db();
         return $db->query(

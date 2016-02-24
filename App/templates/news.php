@@ -1,5 +1,5 @@
 <?php
 
-foreach ($article as $el){
-    echo $el->name;
+foreach ($news as $article){
+    echo $article->name;
 }
