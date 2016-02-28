@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Hello</title>
+    <title>Админка</title>
 
     <!-- Bootstrap -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
@@ -23,9 +23,6 @@
         <h1><?php echo $article->name; ?></h1>
     </a>
     <p><?php echo $article->text; ?></p>
-    <a href="/App/Controllers/delete.php?id=<?php echo $article->id; ?>">
-        <h1>delete</h1>
-    </a>
 <?php endforeach; ?>
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
