@@ -11,7 +11,10 @@ class Db
 
     protected function __construct()
     {
-        $this->dbh = new \PDO('mysql:host=127.0.0.1;dbname=test;charset=UTF8', 'root', '131318');
+        $config = \App\Config::instance();
+
+        $this->dbh = new \PDO('mysql:host=' . $config->data['host'] . ';dbname=' . $config->data['dbname'] .
+            ';charset=UTF8', $config->data['user'], $config->data['password']);
     }
 
     public function execute($sql, $params = [])
