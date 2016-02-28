@@ -8,4 +8,4 @@ include __DIR__ . '/App/templates/news.php';
 */
 $user = new \App\Models\User();
 $user->id = 2;
-$user->save();
+$user->delete();

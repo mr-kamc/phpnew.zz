@@ -105,4 +105,14 @@ WHERE id=' . $this->id;
         }
     }
 
+    public function delete()
+    {
+        if ($this->isNew()){
+            return false;
+        }
+        $sql = 'DELETE FROM ' . static::TABLE . ' WHERE id=' . $this->id;
+        $db = Db::instance();
+        $db->execute($sql);
+    }
+
 } 
