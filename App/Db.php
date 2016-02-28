@@ -5,9 +5,11 @@ namespace App;
 
 class Db
 {
+    use Singleton;
+
     protected $dbh;
 
-    public function __construct()
+    protected function __construct()
     {
         $this->dbh = new \PDO('mysql:host=127.0.0.1;dbname=test;charset=UTF8', 'root', '131318');
     }
@@ -19,11 +21,11 @@ class Db
         return $res;
     }
 
-    public function query($sql, $class,  $params = [])
+    public function query($sql, $class, $params = [])
     {
         $sth = $this->dbh->prepare($sql);
         $res = $sth->execute($params);
-        if (false !== $res){
+        if (false !== $res) {
             return $sth->fetchAll(\PDO::FETCH_CLASS, $class);
         }
         return [];
