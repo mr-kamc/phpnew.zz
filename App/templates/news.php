@@ -18,6 +18,7 @@
     <![endif]-->
 </head>
 <body>
+<?php var_dump($news); ?>
 <?php foreach ($news as $article): ?>
     <a href="/App/Controllers/article.php?id=<?php echo $article->id; ?>">
         <h1><?php echo $article->name; ?></h1>

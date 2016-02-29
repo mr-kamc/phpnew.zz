@@ -4,14 +4,15 @@ require __DIR__ . '/autoload.php';
 
 $view = new \App\View();
 $view->users = \App\Models\User::findAll();
-var_dump($view->users);
-die;
 
-$view->display(__DIR__ . '/App/templates/index.php');
 
-/*
+//echo $view->render(__DIR__ . '/App/templates/news.php');
+
+
 $news = \App\Models\News::findLastNews(3);
 
+echo $view->render(__DIR__ . '/App/templates/news.php');
+/*
 include __DIR__ . '/App/templates/news.php';
 */
 /*
