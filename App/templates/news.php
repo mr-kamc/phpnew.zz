@@ -18,12 +18,14 @@
     <![endif]-->
 </head>
 <body>
-<?php var_dump($news); ?>
 <?php foreach ($news as $article): ?>
     <a href="/App/Controllers/article.php?id=<?php echo $article->id; ?>">
         <h1><?php echo $article->name; ?></h1>
     </a>
     <p><?php echo $article->text; ?></p>
+    <?php if (!empty($article->author)): ?>
+        <p>Автор:<?php echo $article->author->name; ?></p>
+    <?php endif; ?>
     <a href="/App/Controllers/delete.php?id=<?php echo $article->id; ?>">
         <h1>delete</h1>
     </a>
