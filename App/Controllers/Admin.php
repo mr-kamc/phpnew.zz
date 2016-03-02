@@ -30,7 +30,7 @@ class Admin
 
     protected function actionIndex()
     {
-        $this->view->title = 'Мой сайт';
+        $this->view->title = 'Админка';
         $this->view->news = \App\Models\News::findAll();
         $this->view->display(__DIR__ . '/../templates/admin.php');
     }
