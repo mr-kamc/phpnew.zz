@@ -4,7 +4,14 @@ require __DIR__ . '/autoload.php';
 
 $controller = new \App\Controllers\News();
 
-$url = $_SERVER['REQUEST_URI'];
+//$url = $_SERVER['REQUEST_URI'];
+
+$url = 'http://php.net/manual/ru/function.parse-url.php';
+
+$pathRel = explode('/', parse_url($url, PHP_URL_PATH));
+
+var_dump ($pathRel);
+var_dump (count($pathRel));
 
 $action = $_GET['action'] ?: 'Index';
 $controller->action($action);
