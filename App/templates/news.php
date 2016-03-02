@@ -18,19 +18,16 @@
     <![endif]-->
 </head>
 <body>
+<a href = "/Admin/Index">Админка</a>
 <?php foreach ($news as $article): ?>
-    <a href="/App/Controllers/article.php?id=<?php echo $article->id; ?>">
+    <a href="/News/One?id=<?php echo $article->id; ?>">
         <h1><?php echo $article->name; ?></h1>
     </a>
     <p><?php echo $article->text; ?></p>
     <?php if (!empty($article->author)): ?>
         <p>Автор:<?php echo $article->author->name; ?></p>
     <?php endif; ?>
-    <a href="/App/Controllers/delete.php?id=<?php echo $article->id; ?>">
-        <h1>delete</h1>
-    </a>
 <?php endforeach; ?>
-
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->

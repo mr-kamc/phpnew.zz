@@ -18,23 +18,35 @@
     <![endif]-->
 </head>
 <body>
+
 <div class = "container">
     <header><h1>Hello, world!</h1></header>
     <nav>
         <p><a href="/">На главную</a></p>
+        <p><a href="/Admin/Index">Админка</a></p>
     </nav>
-    <div><a href = "/Admin/One">добавление новости</a></div>
+    <form action="/Admin/Save" method = "POST">
+        <?php if (!empty($article->id)): ?>
+        <input type = "hidden" name = "id" value = <?php echo $article->id; ?>>
+        <input type="text" name = "name" value="<?php
+        if (!empty($article->name))
+        {
+            echo $article->name;
+        }
+        ?>">
+        <input type="text" name = "text" value="<?php
+        if (!empty($article->text)) {
+            echo $article->text;
+        }
+        ?>">
 
-    <?php foreach ($news as $article): ?>
-        <article>
-            <h2><a href = "/News/One/?id=<?php echo $article->id; ?>"><?php echo $article->name; ?></a></h2>
-            <div>
-                <a href = "/Admin/Del/?id=<?php echo $article->id; ?>">удалить новость</a>
-                <a href = "/Admin/One?id=<?php echo $article->id; ?>">изменить новость</a>
-            </div>
-            <div><?php echo $article->text ?></div>
-        </article>
-    <?php endforeach; ?>
+        <?php else: ?>
+        <form action="/Admin/Save" method = "POST">
+                <input type="text" name = "name">
+                <input type="text" name = "text"">
+        <?php endif; ?>
+        <input type="submit">
+    </form>
 
 </div>
 

@@ -6,14 +6,31 @@ $controller = new \App\Controllers\News();
 
 //$url = $_SERVER['REQUEST_URI'];
 
-$url = 'http://php.net/manual/ru/function.parse-url.php';
+$url = 'http://phpnew.zz/News/One?id=1';
 
-$pathRel = explode('/', parse_url($url, PHP_URL_PATH));
+$path = explode('/', parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH));
 
-var_dump ($pathRel);
-var_dump (count($pathRel));
+var_dump ($path);
+var_dump (count($path));
 
-$action = $_GET['action'] ?: 'Index';
+//$action = !empty($_GET['action']) ? $_GET['action'] : 'Index';
+//$controller->action($action);
+
+switch (count($path)){
+    case 3:
+        $ctrl = !empty($path[1]) ? '\\App\\Controllers\\' . $path[1] : '\\App\\Controllers\\News';
+        $action = !empty($path[2]) ? $path[2] : 'Index';
+        break;
+    case 2:
+        $ctrl = !empty($path[1]) ? '\\App\\Controllers\\' . $path[1] : '\\App\\Controllers\\News';
+        $action = 'Index';
+        break;
+    default:
+        $ctrl = !empty($path[1]) ? '\\App\\Controllers\\' . $path[1] : '\\App\\Controllers\\News';
+        $action = !empty($path[2]) ? $path[2] : 'Index';
+}
+
+$controller = new $ctrl;
 $controller->action($action);
 /*
 $view = new \App\View();

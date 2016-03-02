@@ -41,4 +41,13 @@ class News extends Model{
         }
     }
 
+    public function fill($data = [])
+    {
+        $this->name = $data['name'];
+        $this->text = $data['text'];
+        $this->author_id = 2;
+
+
+    }
+
 }

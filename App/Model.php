@@ -90,7 +90,7 @@ VALUES
         }
 
         $sql = '
-UPDATE ' . static::TABLE . ' SET ' . ' (' . implode(',', $columns) . ')
+UPDATE ' . static::TABLE . ' SET '  . implode(',', $columns) . '
 WHERE id=' . $this->id;
 
         $db = Db::instance();
@@ -99,6 +99,7 @@ WHERE id=' . $this->id;
 
     public function save()
     {
+
         if ($this->isNew()){
             $this->insert();
         } else {
