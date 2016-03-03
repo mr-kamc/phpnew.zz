@@ -3,7 +3,7 @@
 namespace App\Exceptions;
 
 
-class Core
+class Core extends \Exception
 {
 
 }

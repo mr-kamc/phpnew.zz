@@ -9,12 +9,19 @@ class Db
 
     protected $dbh;
 
+
     protected function __construct()
     {
         $config = \App\Config::instance();
 
-        $this->dbh = new \PDO('mysql:host=' . $config->data['host'] . ';dbname=' . $config->data['dbname'] .
-            ';charset=UTF8', $config->data['user'], $config->data['password']);
+        try {
+            $this->dbh = new \PDO('mysql:host=' . $config->data['host'] . ';dbname=' . $config->data['dbname'] .
+                ';charset=UTF8', $config->data['user'], $config->data['password']);
+        } catch (\PDOException $e) {
+          throw new \App\Exceptions\Db();
+        }
+
+
     }
 
     public function execute($sql, $params = [])
