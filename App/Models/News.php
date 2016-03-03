@@ -4,6 +4,7 @@ namespace App\Models;
 
 
 use App\Model;
+use App\MultiException;
 
 
 class News extends Model{
@@ -40,6 +41,14 @@ class News extends Model{
         $this->name = $data['name'];
         $this->text = $data['text'];
         $this->author_id = 2;
+
+        $e = new MultiException();
+        if (true) {
+            $e[] = new \Exception('Заголовок неверный');
+        }
+        if (true) {
+            $e[] = new \Exception('Текст неверный');
+        }
 
 
     }

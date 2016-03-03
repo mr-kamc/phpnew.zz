@@ -20,9 +20,15 @@ switch (count($path)){
         $ctrl = !empty($path[1]) ? '\\App\\Controllers\\' . $path[1] : '\\App\\Controllers\\News';
         $action = !empty($path[2]) ? $path[2] : 'Index';
 }
-
-$controller = new $ctrl;
-$controller->action($action);
+try {
+    $controller = new $ctrl;
+    $controller->action($action);
+} catch (\App\Exceptions\Core $e) {
+    echo 'Возникло исключение приложения: ' .$e;
+}
+catch (\App\Exceptions\Db $e) {
+    echo 'Возникло исключение приложения: ' . $e;
+}
 /*
 $view = new \App\View();
 $view->news = \App\Models\News::findLastNews(3);

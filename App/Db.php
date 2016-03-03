@@ -18,7 +18,7 @@ class Db
             $this->dbh = new \PDO('mysql:host=' . $config->data['host'] . ';dbname=' . $config->data['dbname'] .
                 ';charset=UTF8', $config->data['user'], $config->data['password']);
         } catch (\PDOException $e) {
-          throw new \App\Exceptions\Db();
+          throw new \App\Exceptions\Db($e->getMessage());
         }
 
 
