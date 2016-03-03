@@ -2,19 +2,10 @@
 
 require __DIR__ . '/autoload.php';
 
-$controller = new \App\Controllers\News();
-
-//$url = $_SERVER['REQUEST_URI'];
-
-$url = 'http://phpnew.zz/News/One?id=1';
-
 $path = explode('/', parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH));
 
-var_dump ($path);
-var_dump (count($path));
-
-//$action = !empty($_GET['action']) ? $_GET['action'] : 'Index';
-//$controller->action($action);
+//var_dump ($path);
+//var_dump (count($path));
 
 switch (count($path)){
     case 3:

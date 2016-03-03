@@ -57,6 +57,7 @@ class Admin
 
     protected function actionSave()
     {
+        $this->view->title = 'редактор новости';
         $post = $_POST;
         if (!empty($post)) {
             $article = new News();
