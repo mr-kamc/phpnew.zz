@@ -43,11 +43,14 @@ class News extends Model{
         $this->author_id = 2;
 
         $e = new MultiException();
-        if (true) {
-            $e[] = new \Exception('Заголовок неверный');
+        if (empty($this->name)) {
+            $e[] = new \Exception('Введите заголовок');
         }
-        if (true) {
-            $e[] = new \Exception('Текст неверный');
+        if (empty($this->text)) {
+            $e[] = new \Exception('Введите текст');
+        }
+        if (!empty($e)){
+            throw $e;
         }
 
 

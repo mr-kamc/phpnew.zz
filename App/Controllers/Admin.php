@@ -6,27 +6,8 @@ namespace App\Controllers;
 use App\Models\News;
 use App\View;
 
-class Admin
+class Admin extends AbstractController
 {
-    protected $view;
-
-    public function __construct()
-    {
-        $this->view = new View();
-    }
-
-    public function action($action)
-    {
-        $methodName = 'action' . $action;
-        $this->beforeAction();
-        return $this->$methodName();
-    }
-
-    protected function beforeAction()
-    {
-
-    }
-
 
     protected function actionIndex()
     {
