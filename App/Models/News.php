@@ -49,8 +49,8 @@ class News extends Model{
         if (empty($this->text)) {
             $e[] = new \Exception('Введите текст');
         }
-        if (!empty($e)){
-            throw $e;
+        if (isset($e)){
+            var_dump($e);
         }
 
 

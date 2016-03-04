@@ -25,13 +25,16 @@ try {
     $controller = new $ctrl;
     $controller->action($action);
 } catch (\App\Exceptions\Core $e) {
-    echo 'Возникло исключение приложения: ' .$e;
+    $error = new \App\Controllers\Error();
+    $error->error($e);
 }
 catch (\App\Exceptions\Db $e) {
-    echo 'Возникло исключение приложения: ' . $e;
+    $error = new \App\Controllers\Error();
+    $error->error('Ошибка базы данных');
 }
 catch (\App\MultiException $e) {
-    var_dump($e->getMessage());
+    $error = new \App\Controllers\Error();
+    $error->errorForm($e);
 }
 
 /*
