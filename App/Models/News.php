@@ -49,9 +49,5 @@ class News extends Model{
         if (!is_null($e[0])){
             throw $e;
         }
-
-
-
     }
-
 }
