@@ -35,24 +35,6 @@ class News extends Model{
                 return false;
         }
     }
-/*
-    public function fill($data = [])
-    {
-        $this->name = $data['name'];
-        $this->text = $data['text'];
-        $this->author_id = 2;
-
-        $e = new MultiException();
-        if (empty($this->name)) {
-            $e[] = new \Exception('Введите заголовок');
-        }
-        if (empty($this->text)) {
-            $e[] = new \Exception('Введите текст');
-        }
-        if (isset($e)){
-            var_dump($e);
-        }
-        */
     public function fill($data)
     {
         $e = new MultiException();
