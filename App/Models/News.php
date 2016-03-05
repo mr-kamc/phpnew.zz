@@ -35,7 +35,7 @@ class News extends Model{
                 return false;
         }
     }
-
+/*
     public function fill($data = [])
     {
         $this->name = $data['name'];
@@ -52,6 +52,22 @@ class News extends Model{
         if (isset($e)){
             var_dump($e);
         }
+        */
+    public function fill($data)
+    {
+        $e = new MultiException();
+        foreach ($data as $key => $value){
+            if (empty($value)){
+                $e[] = new \Exception('Пустое поле: ' . $key);
+            }
+            else {
+                $this->$key = $value;
+            }
+        }
+        if (!is_null($e[0])){
+            throw $e;
+        }
+
 
 
     }

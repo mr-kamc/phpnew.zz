@@ -53,6 +53,4 @@ class Admin extends AbstractController
             header ('Location: /');
         }
     }
-
-
 }
