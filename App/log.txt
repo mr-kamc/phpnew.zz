@@ -1,0 +1,4 @@
+06-03-2016 17:03:54 /home/alex/server/phpnew.zz/App/Db.php строка21 исключение: SQLSTATE[42000] [1049] Unknown database 'tes'
+06-03-2016 17:03:59 /home/alex/server/phpnew.zz/App/Db.php строка21 исключение: SQLSTATE[42000] [1049] Unknown database 'tes'
+06-03-2016 17:03:28 /home/alex/server/phpnew.zz/index.php строка27 исключение: 404
+06-03-2016 17:03:29 /home/alex/server/phpnew.zz/index.php строка27 исключение: 404

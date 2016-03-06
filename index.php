@@ -24,18 +24,21 @@ switch (count($path)){
 try {
     $controller = new $ctrl;
     if (!method_exists($controller,'action' . $action)){
-        throw new \App\Exceptions\Error404();
+        throw new \App\Exceptions\Error404('404');
     } else {
         $controller->action($action);
     }
 } catch (\App\Exceptions\Core $e) {
     $error = new \App\Controllers\Error();
     $error->error($e);
+
 } catch (\App\Exceptions\Error404 $e) {
+    \App\Logger::toFile($e);
     $error = new \App\Controllers\Error();
     $error->action404();
 }
 catch (\App\Exceptions\Db $e) {
+    \App\Logger::toFile($e);
     $error = new \App\Controllers\Error();
     $error->error('Ошибка базы данных');
 }
