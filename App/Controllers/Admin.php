@@ -13,7 +13,8 @@ class Admin extends AbstractController
     {
         $this->view->title = 'Админка';
         $this->view->news = \App\Models\News::findAll();
-        $this->view->display(__DIR__ . '/../templates/admin.php');
+        //$this->view->display(__DIR__ . '/../templates/admin.php');
+        echo $this->view->render(__DIR__ . '/../templates/admin.php');
     }
 
 
@@ -23,7 +24,8 @@ class Admin extends AbstractController
             $id = $_GET['id'];
             $this->view->article = \App\Models\News::findById($id);
         }
-        $this->view->display(__DIR__ . '/../templates/update.php');
+        //$this->view->display(__DIR__ . '/../templates/update.php');
+        echo $this->view->render(__DIR__ . '/../templates/admin.php');
     }
 
 

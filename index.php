@@ -22,9 +22,12 @@ switch (count($path)){
 }
 
 try {
+    PHP_Timer::start();
     $controller = new $ctrl;
     if (!method_exists($controller,'action' . $action)){
+
         throw new \App\Exceptions\Error404('404');
+
     } else {
         $controller->action($action);
     }

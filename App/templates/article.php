@@ -20,6 +20,9 @@
 <body>
     <h1><?php echo $article->name; ?></h1>
     <p><?php echo $article->text; ?></p>
+    <footer>
+        <p>время:<?php echo $time; ?> память</p>
+    </footer>
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>

@@ -15,6 +15,7 @@ class View
 
     public function render($template)
     {
+        $time = \PHP_Timer::resourceUsage();
         ob_start();
         foreach ($this->data as $prop => $value) {
             $$prop = $value;
