@@ -22,7 +22,6 @@ switch (count($path)){
 }
 
 try {
-    PHP_Timer::start();
     $controller = new $ctrl;
     if (!method_exists($controller,'action' . $action)){
 

@@ -15,3 +15,8 @@
 07-03-2016 00:03:39 /home/alex/server/phpnew.zz/index.php строка29 исключение: 404
 07-03-2016 00:03:44 /home/alex/server/phpnew.zz/index.php строка29 исключение: 404
 07-03-2016 00:03:05 /home/alex/server/phpnew.zz/index.php строка29 исключение: 404
+07-03-2016 10:03:21 /home/alex/server/phpnew.zz/index.php строка29 исключение: 404
+07-03-2016 10:03:39 /home/alex/server/phpnew.zz/index.php строка28 исключение: 404
+07-03-2016 10:03:45 /home/alex/server/phpnew.zz/index.php строка28 исключение: 404
+07-03-2016 10:03:53 /home/alex/server/phpnew.zz/index.php строка28 исключение: 404
+07-03-2016 16:03:08 /home/alex/server/phpnew.zz/index.php строка28 исключение: 404
